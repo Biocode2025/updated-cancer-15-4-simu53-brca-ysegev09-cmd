@@ -35,7 +35,7 @@ def Read_dict() :
   global RNA_codon_table
   
   RNA_codon_table={}
-  milon = open('codon_AA.txt', 'r')
+  milon = open('data/codon_AA.txt', 'r')
   for line in (milon):
     line = line.rstrip("\r\n")
     num=line[0:3]
@@ -94,7 +94,7 @@ dop_until_chn=0
 seq=""  
 total_replications = 0
 rep=0
-file = open('pck_coli.txt', 'r')
+file = open('data/pck_coli.txt', 'r')
 make_mil=Read_dict()
 for line in(file):
   if line[0]!=">":
@@ -102,29 +102,29 @@ for line in(file):
     call3=DNA_RNA_Cod(line)
     seq=seq+call3
 gan=0
-while gan<=100:
-  ran_mata=random.randrange(1,101)
-  if ran_mata<98: 
-  
-    rep+= 
-
-    dop_until_chn=dop_until_chn+1
-    mata=Mutate_DNA(seq)
-    protin=RNA_prot(seq) 
-    protin_mata=RNA_prot(mata)
-    ASVAHA=Comp_seq(protin,protin_mata)
-    if ASVAHA!=0:
+avrag_run=0
+while avrag_run<=100:
+  while gan<=100:
+    ran_mata=random.randrange(1,101)
+    if ran_mata<98: 
+      dop_until_chn=dop_until_chn+1
+      mata=Mutate_DNA(seq)
+      protin=RNA_prot(seq) 
+      protin_mata=RNA_prot(mata)
+      ASVAHA=Comp_seq(protin,protin_mata)
+      if ASVAHA==mutations_needed:
+        break
+    elif ran_mata==99:
+      dop_until_chn=dop_until_chn+1
+      mata=Insert_DNA(seq)
       break
-  elif ran_mata==99:
-    dop_until_chn=dop_until_chn+1
-    mata=Insert_DNA(seq)
-    break
-  else:
-    dop_until_chn=dop_until_chn+1
-    mata=Delete_DNA(seq)
-    break
-  gan=gan+1
-  print(ran_mata)
+    else:
+      dop_until_chn=dop_until_chn+1
+      mata=Delete_DNA(seq)
+      break
+    gan=gan+1
+    print(gan)
+  
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
