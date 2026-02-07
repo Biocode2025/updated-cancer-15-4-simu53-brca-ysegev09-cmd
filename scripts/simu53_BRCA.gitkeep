@@ -33,7 +33,7 @@ def DNA_RNA_Cod(line) : # התרגום לRNAוהגדלה
 
 def Read_dict() :
   global RNA_codon_table
-  
+
   RNA_codon_table={}
   milon = open('data/codon_AA.txt', 'r')
   for line in (milon):
@@ -103,10 +103,12 @@ for line in(file):
     seq=seq+call3
 gan=0
 avrag_run=0
-while avrag_run<=100:
+avrag_run_c=0
+while avrag_run_c<=100:
   while gan<=100:
     ran_mata=random.randrange(1,101)
     if ran_mata<98: 
+      avrag_run=avrag_run+1
       dop_until_chn=dop_until_chn+1
       mata=Mutate_DNA(seq)
       protin=RNA_prot(seq) 
@@ -115,10 +117,12 @@ while avrag_run<=100:
       if ASVAHA==mutations_needed:
         break
     elif ran_mata==99:
+      avrag_run=avrag_run+1
       dop_until_chn=dop_until_chn+1
       mata=Insert_DNA(seq)
       break
     else:
+      avrag_run=avrag_run+1
       dop_until_chn=dop_until_chn+1
       mata=Delete_DNA(seq)
       break
