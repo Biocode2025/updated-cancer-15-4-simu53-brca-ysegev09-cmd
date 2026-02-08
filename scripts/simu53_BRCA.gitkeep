@@ -104,8 +104,8 @@ for line in(file):
 gan=0
 avrag_run=0
 avrag_run_c=0
-while avrag_run_c<=10:
-  while gan<=10:
+for avrag_run_c in range(1001):
+  for gan in range(1001): 
     ran_mata=random.randrange(1,101)
     if ran_mata<98: 
       avrag_run=avrag_run+1
@@ -115,8 +115,6 @@ while avrag_run_c<=10:
       protin_mata=RNA_prot(mata)
       ASVAHA=Comp_seq(protin,protin_mata)
       if ASVAHA==mutations_needed:
-        print(4)
-        print(".....")
         break
     elif ran_mata==99:
       avrag_run=avrag_run+1
@@ -130,14 +128,19 @@ while avrag_run_c<=10:
       break
     
 avrag_run=(avrag_run*100)/1000
-print(avrag_run)  
+ 
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
 ASVAHA=Comp_seq(protin,protin_mata)
-print("original: ",protin )
-print("mutation: ",protin_mata )
-print("the num of mutations is:   ", dop_until_chn)
-print("The difference is:   ",ASVAHA)
+file_a=open('results/results_can.fasta', 'w')
+file_a.write("original: "+protin+ "\n")
+file_a.write("mutation: "+protin_mata+"\n" )
+file_a.write("the num of mutations is:   "+ str(dop_until_chn) +"\n")
+file_a.write("The The average number of replications required:   "+str(avrag_run)+"\n")
+file_a.close()
+file_a=open('results/results_can.fasta', 'r')
 
+for line in (file_a):
+  print(line)
   
