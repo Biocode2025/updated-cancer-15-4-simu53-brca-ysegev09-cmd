@@ -104,28 +104,31 @@ for line in(file):
 gan=0
 avrag_run=0
 avrag_run_c=0
-for avrag_run_c in range(1001):
-  for gan in range(1001): 
-    ran_mata=random.randrange(1,101)
-    if ran_mata<98: 
-      avrag_run=avrag_run+1
-      dop_until_chn=dop_until_chn+1
-      mata=Mutate_DNA(seq)
-      protin=RNA_prot(seq) 
-      protin_mata=RNA_prot(mata)
-      ASVAHA=Comp_seq(protin,protin_mata)
-      if ASVAHA==mutations_needed:
+chan_mata=random.randrange(1,1001)
+if chan_mata=1000: 
+  for avrag_run_c in range(1001):
+    for gan in range(1001): 
+      ran_mata=random.randrange(1,101)
+      if ran_mata<98: 
+        avrag_run=avrag_run+1
+        dop_until_chn=dop_until_chn+1
+        mata=Mutate_DNA(seq)
+        protin=RNA_prot(seq) 
+        protin_mata=RNA_prot(mata)
+        ASVAHA=Comp_seq(protin,protin_mata)
+        if ASVAHA==mutations_needed:
+          break
+      elif ran_mata==99:
+        avrag_run=avrag_run+1
+        dop_until_chn=dop_until_chn+1
+        mata=Insert_DNA(seq)
         break
-    elif ran_mata==99:
-      avrag_run=avrag_run+1
-      dop_until_chn=dop_until_chn+1
-      mata=Insert_DNA(seq)
-      break
-    else:
-      avrag_run=avrag_run+1
-      dop_until_chn=dop_until_chn+1
-      mata=Delete_DNA(seq)
-      break
+      else:
+        avrag_run=avrag_run+1
+        dop_until_chn=dop_until_chn+1
+        mata=Delete_DNA(seq)
+        break
+  
     
 avrag_run=(avrag_run*100)/1000
 avg_years=(avrag_run)/365
