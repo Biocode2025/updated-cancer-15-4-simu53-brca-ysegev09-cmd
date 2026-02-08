@@ -104,8 +104,8 @@ for line in(file):
 gan=0
 avrag_run=0
 avrag_run_c=0
-while avrag_run_c<=100:
-  while gan<=100:
+while avrag_run_c<=10:
+  while gan<=10:
     ran_mata=random.randrange(1,101)
     if ran_mata<98: 
       avrag_run=avrag_run+1
@@ -115,6 +115,8 @@ while avrag_run_c<=100:
       protin_mata=RNA_prot(mata)
       ASVAHA=Comp_seq(protin,protin_mata)
       if ASVAHA==mutations_needed:
+        print(4)
+        print(".....")
         break
     elif ran_mata==99:
       avrag_run=avrag_run+1
@@ -126,9 +128,9 @@ while avrag_run_c<=100:
       dop_until_chn=dop_until_chn+1
       mata=Delete_DNA(seq)
       break
-    gan=gan+1
-    print(gan)
-  
+    
+avrag_run=(avrag_run*100)/1000
+print(avrag_run)  
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
