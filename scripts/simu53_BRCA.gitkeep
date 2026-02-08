@@ -128,7 +128,7 @@ for avrag_run_c in range(1001):
       break
     
 avrag_run=(avrag_run*100)/1000
-avg_years=(avrag_run*24)/365
+avg_years=(avrag_run)/365
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
