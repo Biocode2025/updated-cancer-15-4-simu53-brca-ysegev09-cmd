@@ -128,7 +128,7 @@ for avrag_run_c in range(1001):
       break
     
 avrag_run=(avrag_run*100)/1000
- 
+avg_years=(avrag_run*24)/365
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
@@ -137,7 +137,7 @@ file_a=open('results/results_can.fasta', 'w')
 file_a.write("original: "+protin+ "\n")
 file_a.write("mutation: "+protin_mata+"\n" )
 file_a.write("the num of mutations is:   "+ str(dop_until_chn) +"\n")
-file_a.write("The The average number of replications required:   "+str(avrag_run)+"\n")
+file_a.write("The The average number of years required:   "+str(avg_years)+"\n")
 file_a.close()
 file_a=open('results/results_can.fasta', 'r')
 
