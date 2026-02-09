@@ -105,9 +105,11 @@ mata=seq
 gan=0
 avrag_run=0
 avrag_run_c=0
-chan_mata=random.randrange(1,10001)
+
 for avrag_run_c in range(1001):
   while True: 
+    
+    chan_mata=random.randrange(1,10001)
     if chan_mata==5000:
       ran_mata=random.randrange(1,101)
       if ran_mata<98: 
@@ -129,9 +131,9 @@ for avrag_run_c in range(1001):
         dop_until_chn=dop_until_chn+1
         mata=Delete_DNA(mata)
         break
-    
+  
 avrag_run=(avrag_run*100)/1000
-avg_years=(avrag_run)/365
+avg_years=(avrag_run)/365*24
 
 protin=RNA_prot(seq) 
 protin_mata=RNA_prot(mata)
@@ -139,7 +141,7 @@ ASVAHA=Comp_seq(protin,protin_mata)
 file_a=open('results/results_can.fasta', 'w')
 file_a.write("original: "+protin+ "\n")
 file_a.write("mutation: "+protin_mata+"\n" )
-file_a.write("the num of mutations is:   "+ str(dop_until_chn) +"\n")
+file_a.write("the num of replications is:   "+ str(dop_until_chn) +"\n")
 file_a.write("The The average number of years required:   "+str(avg_years)+"\n")
 file_a.close()
 file_a=open('results/results_can.fasta', 'r')
