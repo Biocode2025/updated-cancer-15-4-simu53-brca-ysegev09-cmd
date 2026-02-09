@@ -101,19 +101,20 @@ for line in(file):
     line = line.rstrip("\r\n")
     call3=DNA_RNA_Cod(line)
     seq=seq+call3
+mata=seq
 gan=0
 avrag_run=0
 avrag_run_c=0
-chan_mata=random.randrange(1,1001)
-if chan_mata=1000: 
-  for avrag_run_c in range(1001):
-    for gan in range(1001): 
+chan_mata=random.randrange(1,10001)
+for avrag_run_c in range(1001):
+  while True: 
+    if chan_mata==5000:
       ran_mata=random.randrange(1,101)
       if ran_mata<98: 
         avrag_run=avrag_run+1
         dop_until_chn=dop_until_chn+1
-        mata=Mutate_DNA(seq)
-        protin=RNA_prot(seq) 
+        mata=Mutate_DNA(mata)
+        protin=RNA_prot(mata) 
         protin_mata=RNA_prot(mata)
         ASVAHA=Comp_seq(protin,protin_mata)
         if ASVAHA==mutations_needed:
@@ -121,14 +122,13 @@ if chan_mata=1000:
       elif ran_mata==99:
         avrag_run=avrag_run+1
         dop_until_chn=dop_until_chn+1
-        mata=Insert_DNA(seq)
+        mata=Insert_DNA(mata)
         break
       else:
         avrag_run=avrag_run+1
         dop_until_chn=dop_until_chn+1
-        mata=Delete_DNA(seq)
+        mata=Delete_DNA(mata)
         break
-  
     
 avrag_run=(avrag_run*100)/1000
 avg_years=(avrag_run)/365
