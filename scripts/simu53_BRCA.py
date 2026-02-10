@@ -106,7 +106,8 @@ gan=0
 avrag_run=0
 avrag_run_c=0
 
-for avrag_run_c in range(1001):
+for avrag_run_c in range(1000):
+  
   while True: 
     avrag_run=avrag_run+1
     chan_mata=random.randrange(1,10001)
@@ -116,7 +117,7 @@ for avrag_run_c in range(1001):
         
         dop_until_chn=dop_until_chn+1
         mata=Mutate_DNA(mata)
-        protin=RNA_prot(mata) 
+        protin=RNA_prot(seq) 
         protin_mata=RNA_prot(mata)
         ASVAHA=Comp_seq(protin,protin_mata)
         if ASVAHA==mutations_needed:
@@ -132,7 +133,8 @@ for avrag_run_c in range(1001):
         mata=Delete_DNA(mata)
         break
   
-avrag_run=(avrag_run/1000)
+  
+avrag_run=(avrag_run/10)
 avg_years=(avrag_run)/365
 
 protin=RNA_prot(seq) 
