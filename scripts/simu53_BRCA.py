@@ -107,7 +107,7 @@ avrag_run=0
 avrag_run_c=0
 
 for avrag_run_c in range(1000):
-  
+
   while True: 
     avrag_run=avrag_run+1
     chan_mata=random.randrange(1,10001)
@@ -134,7 +134,7 @@ for avrag_run_c in range(1000):
         break
   
   
-avrag_run=(avrag_run/10)
+avrag_run=(avrag_run/1000)
 avg_years=(avrag_run)/365
 
 protin=RNA_prot(seq) 
